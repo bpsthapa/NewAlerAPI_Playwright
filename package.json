@@ -1,0 +1,19 @@
+{
+  "name": "newalertapi_playwright",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.12",
+    "allure-playwright": "^2.15.1"
+  },
+  "dependencies": {
+    "form-data": "^4.0.2",
+    "node-ssh": "^13.2.1"
+  }
+}

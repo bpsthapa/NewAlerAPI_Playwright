@@ -1,0 +1,41 @@
+{
+  "baseUrl": "https://10.45.3.133",
+
+  "alertName":"NewAlert_Bipin2",
+  "description":"This is the alert rules created from API",
+  "query":"user=*",
+  "timerange_minute":1,
+  "repo":"127.0.0.1:5504/_logpoint",
+  "limit":100,
+  "search_interval_minute":1,
+  "throttling_time_range":0,
+  "condition_option":"greaterthan",
+  "aggregate":"max",
+  "jinja_template":"jinja template",
+
+  "updatedAlertName": "Updated_AlertRule_Bipin",
+  "update_query":"login device_ip = 192.168.2.1 sig_id = 10051",
+  "update_timerange_minute":1,
+  "update_repo":"127.0.0.1:5504/default",
+  "update_limit":100,
+  "update_search_interval_minute":1,
+  "update_throttling_time_range":0,
+  "update_condition_option":"greaterthan",
+  "update_aggregate":"max",
+  "update_jinja_template":"jinja template",
+
+  "notifAlertName": "Notification_AlertRule",
+  "notif_query":"login device_ip = 192.168.2.1 sig_id = 10051",
+  "notif_timerange_minute":1,
+  "notif_repo":"127.0.0.1:5504/default",
+  "notif_limit":100,
+  "notif_search_interval_minute":1,
+  "notif_throttling_time_range":0,
+  "notifcondition_option":"greaterthan",
+  "notif_aggregate":"max",
+  "notif_jinja_template":"jinja template",
+
+  "read_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlIjoidXNlcjpyZWFkIGFsZXJ0cnVsZXM6cmVhZCBzZWFyY2g6cmVhZCBsb2dzb3VyY2U6cmVhZCIsImlhdCI6MTc1ODI1ODcxNCwiZXhwIjoxNzU4MzQ1MTE0LCJpc3MiOiJzZWxmLXNpZ25lZCJ9.82FiE1n4qN-v5chdwN78zJskzdZnbrPkx7t1nAvwg6E",
+  "write_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlIjoidXNlcjp3cml0ZSBhbGVydHJ1bGVzOndyaXRlIHNlYXJjaDp3cml0ZSBsb2dzb3VyY2U6d3JpdGUiLCJpYXQiOjE3NTgyNTg3MTQsImV4cCI6MTc1ODM0NTExNCwiaXNzIjoic2VsZi1zaWduZWQifQ.9og3gT2Hwxg2eadYqZou9-jZ456dBQ188F3nh9V6aEo"
+
+}

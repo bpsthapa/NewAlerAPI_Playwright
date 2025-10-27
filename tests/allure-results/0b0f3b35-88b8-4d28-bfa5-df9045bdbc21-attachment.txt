@@ -1,0 +1,6 @@
+The response from the API is :
+{
+  success: false,
+  validationErrors: { name: 'ensure this value has at least 5 characters' },
+  message: 'Invalid Request'
+}

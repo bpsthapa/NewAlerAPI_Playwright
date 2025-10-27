@@ -1,0 +1,209 @@
+# Test info
+
+- Name: AlertAPI >> Add AlertRules from NewAPI
+- Location: /Users/Bipinlp/Documents/LogPoint_Feature/Allure Report/tests/NewAlertAPI/01_CRUD_AlertRules_Final.spec.js:25:5
+
+# Error details
+
+```
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: "Alertrule created successfully"
+Received: "Assignee is not it in Incident Usergroup"
+    at /Users/Bipinlp/Documents/LogPoint_Feature/Allure Report/tests/NewAlertAPI/01_CRUD_AlertRules_Final.spec.js:89:36
+```
+
+# Test source
+
+```ts
+   1 | const { test, expect, request } = require('@playwright/test');
+   2 |
+   3 | const data=JSON.parse(JSON.stringify(require("../../testData/Info.json")));
+   4 | //const data=JSON.parse(JSON.stringify(require("../../testData/BasicData.json")));
+   5 |
+   6 | let _objectid;
+   7 | let Output = "The response from the API is :"
+   8 |
+   9 | const baseURL = data.baseUrl;
+   10 | const write_token = data.write_token
+   11 | const read_token = data.read_token
+   12 |
+   13 | const createAlert = '/AlertRules/create_api';
+   14 | const viewAlert = '/AlertRules/read_api?id=';
+   15 | const updateAlert = '/AlertRules/update_api';
+   16 |
+   17 | const listAlert = '/AlertRules/lists_api';
+   18 | const activateAlert = '/AlertRules/activate_api';
+   19 | const deactivateAlert = '/AlertRules/deactivate_api';
+   20 | const deleteAlert = '/AlertRules/delete_api';
+   21 |
+   22 | test.describe.serial('AlertAPI', () => {
+   23 |   console.log("****Performing Test on Machine: ****"+baseURL) 
+   24 |
+   25 |     test('Add AlertRules from NewAPI', async ({ request }) => {
+   26 |       console.log("****Testing Create Alert Rules****")
+   27 |       const response = await request.post(`${baseURL}/AlertRules/create_api`, {
+   28 |         data: {
+   29 |           "search_params": {
+   30 |             "query": data.query,
+   31 |             "timerange_day": 0,
+   32 |             "timerange_hour": 0,
+   33 |             "timerange_minute": data.timerange_minute,
+   34 |             "repos": [
+   35 |               "127.0.0.1:5504/_logpoint"
+   36 |             ],
+   37 |             "limit": data.limit,
+   38 |             "flush_on_trigger": false,
+   39 |             "search_interval_minute": data.search_interval_minute,
+   40 |             "delay_interval_minute": 0,
+   41 |             "throttling_enabled": false,
+   42 |             "throttling_field": data.throttling_time_range,
+   43 |             "throttling_time_range": 0
+   44 |           },
+   45 |           "incident_condition": {
+   46 |             "condition_option": data.condition_option,
+   47 |             "condition_value": 0,
+   48 |             "risk": "low",
+   49 |             "aggregate": data.aggregate
+   50 |           },
+   51 |           "taxonomy": {
+   52 |             "attack_tag_hashes": [],
+   53 |             "logsources": [],
+   54 |             "metadata": [
+   55 |               {
+   56 |                 "field": "string",
+   57 |                 "value": "string"
+   58 |               }
+   59 |             ]
+   60 |           },
+   61 |           "incident_ownership": {
+   62 |             "assignee": "admin",
+   63 |             "visible_to_usergroups": []
+   64 |           },
+   65 |           "incident_display_data": {
+   66 |             "apply_jinja_template": true,
+   67 |             "simple_view": false,
+   68 |             "jinja_template": data.jinja_template
+   69 |           },
+   70 |           "foureyes": {
+   71 |             "original_data": false
+   72 |           },
+   73 |           "name": data.alertName,
+   74 |           "description": data.description
+   75 |         },
+   76 |         headers: {
+   77 |           'Content-Type': 'application/json',
+   78 |           'Authorization': `Bearer ${write_token}`
+   79 |         },
+   80 |         // Disable SSL certificate verification
+   81 |         ignoreHTTPSErrors: true
+   82 |       });
+   83 |
+   84 |       //expect(response.ok()).toBeTruthy(); // Check if status is 2xx
+   85 |       const responseBody = await response.json();
+   86 |       console.log(Output);
+   87 |       console.log(responseBody);
+   88 |
+>  89 |       expect(responseBody.message).toBe('Alertrule created successfully');
+      |                                    ^ Error: expect(received).toBe(expected) // Object.is equality
+   90 |       expect(responseBody.id).toBeDefined();
+   91 |       expect(responseBody.name).toBeDefined();
+   92 |       _objectid = responseBody.id;
+   93 |       console.log(_objectid);
+   94 |     });
+   95 |
+   96 |     test('View AlertRules from NewAPI', async ({ request }) => {
+   97 |       console.log("****Testing View Alert Rules****")
+   98 |       console.log("The added new alert rule id is : "+_objectid);
+   99 |       console.log(_objectid);
+  100 |       const response = await request.post(`${baseURL}/AlertRules/read_api?id=${_objectid}`, {
+  101 |         headers: {
+  102 |           'Authorization': `Bearer ${read_token}`  // Use the actual token here
+  103 |         },
+  104 |         // Disable SSL certificate verification
+  105 |         ignoreHTTPSErrors: true
+  106 |       });
+  107 |
+  108 |       //expect(response.ok()).toBeTruthy(); // Check if status is 2xx
+  109 |       const responseBody = await response.json();
+  110 |       console.log(Output);
+  111 |       console.log(responseBody);
+  112 |       const data = responseBody.data; 
+  113 |       expect(responseBody.data.alert_id).toBeDefined();
+  114 |       expect(responseBody.data.search_params.query).toBeDefined();
+  115 |       expect(responseBody.data.search_params.repos).toBeDefined();
+  116 |       expect(responseBody.data.search_params.timerange_minute).toBeDefined();
+  117 |
+  118 |       const alert_id = responseBody.data.alert_id;
+  119 |     });
+  120 |
+  121 |     test('Update AlertRules from NewAPI', async ({ request }) => {
+  122 |       console.log("****Testing Update Alert Rules****") 
+  123 |       const response = await request.post(`${baseURL}${updateAlert}`, {
+  124 |         data: {
+  125 |           "search_params": {
+  126 |             "query": data.update_query,
+  127 |             "timerange_day": 0,
+  128 |             "timerange_hour": 20,
+  129 |             "timerange_minute": 0,
+  130 |             "repos": [
+  131 |               "127.0.0.1:5504/default"
+  132 |             ],
+  133 |             "limit": 100,
+  134 |             "flush_on_trigger": false,
+  135 |             "search_interval_trigger": false,
+  136 |             "search_interval_minute": 10,
+  137 |             "delay_interval_trigger": false,
+  138 |             "delay_interval_minute": 0,
+  139 |             "throttling_enabled": false,
+  140 |             "throttling_field": "",
+  141 |             "throttling_time_range": 0
+  142 |           },
+  143 |           "incident_condition": {
+  144 |             "condition_option": "greaterthan",
+  145 |             "condition_value": 1,
+  146 |             "risk": "low",
+  147 |             "aggregate": "max"
+  148 |           },
+  149 |           "taxonomy": {
+  150 |             "attack_tag_hashes": [],
+  151 |             "logsources": [],
+  152 |             "metadata": [
+  153 |               {
+  154 |                 "field": "string",
+  155 |                 "value": "string"
+  156 |               }
+  157 |             ]
+  158 |           },
+  159 |           "incident_ownership": {
+  160 |             "assignee": "admin",
+  161 |             "visible_to_users": []
+  162 |           },
+  163 |           "incident_display_data": {
+  164 |             "apply_jinja_template": false,
+  165 |             "simple_view": false,
+  166 |             "jinja_template": ""
+  167 |           },
+  168 |           "foureyes": {
+  169 |             "original_data": false
+  170 |           },
+  171 |           "name": data.updatedAlertName,
+  172 |           "description": "This is the description of the alert rules which has been updated one UI alert updated",
+  173 |           "id": `${_objectid}`
+  174 |         },
+  175 |         headers: {
+  176 |           'Content-Type': 'application/json',
+  177 |           'Authorization': `Bearer ${write_token}`
+  178 |         },
+  179 |         // Disable SSL certificate verification
+  180 |         ignoreHTTPSErrors: true
+  181 |       });
+  182 |
+  183 |       //expect(response.ok()).toBeTruthy(); // Check if status is 2xx
+  184 |       const responseBody = await response.json();
+  185 |       console.log(Output);
+  186 |       console.log(responseBody);
+  187 |       expect(responseBody.message).toBe('Alertrule updated successfully');
+  188 |       expect(responseBody.id).toBeDefined();
+  189 |       expect(responseBody.name).toBeDefined();
+```

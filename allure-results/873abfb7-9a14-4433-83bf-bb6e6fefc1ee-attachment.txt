@@ -1,0 +1,5 @@
+Createing AlertRules
+****Testing Create Alert Rules****
+Clearing test data AlertRules
+Deleting the created AlertRules and the alert rule id is: 
+undefined

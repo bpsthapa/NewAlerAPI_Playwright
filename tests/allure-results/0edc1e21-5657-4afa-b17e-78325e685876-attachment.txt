@@ -1,0 +1,6 @@
+The response from the API is :
+{
+  id: '682dfef58b7f56af0d877779',
+  message: 'Alertrule created successfully',
+  name: 'CustomAlessrtRules_78922'
+}

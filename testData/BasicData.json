@@ -1,0 +1,7 @@
+{
+  "baseUrl": "https://10.45.3.133",
+
+  "read_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlIjoidXNlcjpyZWFkIGFsZXJ0cnVsZXM6cmVhZCBzZWFyY2g6cmVhZCBsb2dzb3VyY2U6cmVhZCIsImlhdCI6MTc1ODI1ODcxNCwiZXhwIjoxNzU4MzQ1MTE0LCJpc3MiOiJzZWxmLXNpZ25lZCJ9.82FiE1n4qN-v5chdwN78zJskzdZnbrPkx7t1nAvwg6E",
+  "write_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlIjoidXNlcjp3cml0ZSBhbGVydHJ1bGVzOndyaXRlIHNlYXJjaDp3cml0ZSBsb2dzb3VyY2U6d3JpdGUiLCJpYXQiOjE3NTgyNTg3MTQsImV4cCI6MTc1ODM0NTExNCwiaXNzIjoic2VsZi1zaWduZWQifQ.9og3gT2Hwxg2eadYqZou9-jZ456dBQ188F3nh9V6aEo"
+
+}

@@ -1,0 +1,13 @@
+the response is:
+{
+  success: false,
+  validationErrors: {
+    name: 'field required',
+    search_params: 'field required',
+    incident_condition: 'field required',
+    taxonomy: 'field required',
+    incident_ownership: 'field required',
+    incident_display_data: 'field required'
+  },
+  message: 'Invalid Request'
+}

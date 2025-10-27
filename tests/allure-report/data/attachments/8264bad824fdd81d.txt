@@ -1,0 +1,6 @@
+The response from the API is :
+{
+  success: true,
+  ids: [ '682d7d018b7f56af0d877777' ],
+  message: 'Alertrule(s) activated'
+}

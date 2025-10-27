@@ -1,0 +1,11 @@
+****Testing Create Alert Rules****
+The response from the API is :
+{
+  success: false,
+  error_code: null,
+  message: 'Assignee is not it in Incident Usergroup'
+}
+Clearing test data AlertRules
+Deleting the created AlertRules and the alert rule id is: 
+undefined
+**********All the added Alert Rules has been Deleted Successfuly***********

@@ -1,0 +1,7 @@
+****Testing Update Alert Rules****
+The response from the API is :
+{
+  id: '68a44ab0e7086af84f34aac0',
+  message: 'Alertrule updated successfully',
+  name: 'Updated_AlertRule_Bipin'
+}

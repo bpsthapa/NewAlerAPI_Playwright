@@ -1,0 +1,11 @@
+****Testing Delete Alert Rules****
+The response from the API is :
+{
+  success: true,
+  ids: [ '68a43c313c9de192c30a343b' ],
+  message: 'Alertrule(s) deleted'
+}
+Clearing test data AlertRules
+Deleting the created AlertRules and the alert rule id is: 
+68a43c313c9de192c30a343b
+**********All the added Alert Rules has been Deleted Successfuly***********

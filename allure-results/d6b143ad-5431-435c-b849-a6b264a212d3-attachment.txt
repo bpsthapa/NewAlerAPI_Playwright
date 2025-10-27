@@ -1,0 +1,12 @@
+****Testing View HTTP Notification****
+The added new alert rule id is : 68cce6f2140fd91a34ed770e
+The response from the API is :
+{
+  error: 'Request out of the scope of the token',
+  status_code: 403,
+  success: false
+}
+Clearing test data AlertRules
+Deleting the created AlertRules and the alert rule id is: 
+68cce6f2140fd91a34ed770e
+**********All the added Alert Rules has been Deleted Successfuly***********

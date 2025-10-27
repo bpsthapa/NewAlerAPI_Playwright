@@ -1,0 +1,7 @@
+The response from the API is :
+{
+  id: '681d96b0a04bccd86d3d4a10',
+  message: 'Alertrule created successfully',
+  name: 'AlertFromAzureAD2_admin'
+}
+681d96b0a04bccd86d3d4a10

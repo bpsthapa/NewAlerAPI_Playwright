@@ -1,0 +1,21 @@
+****Testing View HTTP Notification****
+The added new alert rule id is : 68cce7bf140fd91a34ed7710
+The response from the API is :
+{
+  success: true,
+  data: {
+    type: 'http',
+    http_url: 'https://d05nm6gz1wg0000xzpx0gon44deyyyyyb.oast.pro',
+    http_request_type: 'GET',
+    http_querystring: 'col_type=syslog',
+    notify_http: false,
+    http_format_query: 'col_type=syslog',
+    http_body: null,
+    protocol: 'HTTP',
+    dispatch_option: 'manual',
+    http_header: {},
+    http_threshold_value: 1,
+    http_threshold_option: 'minute'
+  },
+  message: ''
+}

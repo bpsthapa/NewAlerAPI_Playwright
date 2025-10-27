@@ -1,0 +1,69 @@
+# Test info
+
+- Name: Add AlertRules from NewAPI
+- Location: /Users/Bipinlp/Documents/LogPoint/Allure Report/tests/Repos/test.spec.js:8:1
+
+# Error details
+
+```
+Error: Expected 'rows' to be an array
+
+expect(received).toBeTruthy()
+
+Received: false
+    at /Users/Bipinlp/Documents/LogPoint/Allure Report/tests/Repos/test.spec.js:23:78
+```
+
+# Test source
+
+```ts
+   1 | const { test, expect, request } = require('@playwright/test');
+   2 | const data = JSON.parse(JSON.stringify(require("../../testData/Info.json")));
+   3 |
+   4 | const createAlert = '/Repo/get_all_searchable_logpoint';
+   5 | const baseURL = data.baseUrl;
+   6 | const read_token = data.read_token;
+   7 |
+   8 | test('Add AlertRules from NewAPI', async ({ request }) => {
+   9 |   const response = await request.get(`${baseURL}${createAlert}`, {
+  10 |     headers: {
+  11 |       'Content-Type': 'application/json',
+  12 |       'Authorization': `Bearer ${read_token}`
+  13 |     },
+  14 |     ignoreHTTPSErrors: true
+  15 |   });
+  16 |
+  17 |   //expect(response.ok()).toBeTruthy();
+  18 |
+  19 |   const responseBody = await response.json();
+  20 |   console.log("Response body:", JSON.stringify(responseBody, null, 2));
+  21 |
+  22 |   // Guard check for 'rows'
+> 23 |   expect(Array.isArray(responseBody.rows), "Expected 'rows' to be an array").toBeTruthy();
+     |                                                                              ^ Error: Expected 'rows' to be an array
+  24 |   expect(responseBody.rows.length, "Expected 'rows' array to have at least 1 item").toBeGreaterThan(0);
+  25 |
+  26 |   const repos = responseBody.rows[0].repos;
+  27 |
+  28 |   // Guard check for 'repos'
+  29 |   expect(Array.isArray(repos), "Expected 'repos' to be an array").toBeTruthy();
+  30 |   expect(repos.length, "Expected 'repos' array to have items").toBeGreaterThan(0);
+  31 |
+  32 |   // Assert all repos have active === "True"
+  33 |   repos.forEach(repo => {
+  34 |     expect(repo.active).toBe("True");
+  35 |   });
+  36 |
+  37 |   // Check for specific repo names
+  38 |   const repoNames = repos.map(repo => repo.repo);
+  39 |   expect(repoNames).toContain("_logpoint");
+  40 |   expect(repoNames).toContain("default");
+  41 |   expect(repoNames).toContain("_LogPointAlerts");
+  42 |
+  43 |   // Check address pattern
+  44 |   repos.forEach(repo => {
+  45 |     expect(repo.address).toContain("127.0.0.1:550");
+  46 |   });
+  47 | });
+  48 |
+```

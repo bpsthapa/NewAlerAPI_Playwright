@@ -1,0 +1,7 @@
+****Testing Activate Alert Rules****
+The response from the API is :
+{
+  success: true,
+  ids: [ '68a44ab0e7086af84f34aac0' ],
+  message: 'Alertrule(s) activated'
+}

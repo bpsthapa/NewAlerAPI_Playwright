@@ -1,0 +1,8 @@
+****Testing Create Alert Rules****
+The response from the API is :
+{
+  id: '68a44ab0e7086af84f34aac0',
+  message: 'Alertrule created successfully',
+  name: 'NewAlert_Bipin2'
+}
+68a44ab0e7086af84f34aac0

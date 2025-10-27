@@ -1,0 +1,61 @@
+# Test info
+
+- Name: Add AlertRules from NewAPI
+- Location: /Users/Bipinlp/Documents/LogPoint/Allure Report/tests/Repos/test.spec.js:8:1
+
+# Error details
+
+```
+Error: expect(received).toBeTruthy()
+
+Received: false
+    at /Users/Bipinlp/Documents/LogPoint/Allure Report/tests/Repos/test.spec.js:17:25
+```
+
+# Test source
+
+```ts
+   1 | const { test, expect, request } = require('@playwright/test');
+   2 | const data = JSON.parse(JSON.stringify(require("../../testData/Info.json")));
+   3 |
+   4 | const createAlert = '/Repo/get_all_searchable_logpoint';
+   5 | const baseURL = data.baseUrl;
+   6 | const read_token = data.read_token;
+   7 |
+   8 | test('Add AlertRules from NewAPI', async ({ request }) => {
+   9 |   const response = await request.get(`${baseURL}${createAlert}`, {
+  10 |     headers: {
+  11 |       'Content-Type': 'application/json',
+  12 |       'Authorization': `Bearer ${read_token}`
+  13 |     },
+  14 |     ignoreHTTPSErrors: true
+  15 |   });
+  16 |
+> 17 |   expect(response.ok()).toBeTruthy();
+     |                         ^ Error: expect(received).toBeTruthy()
+  18 |
+  19 |   const responseBody = await response.json();
+  20 |
+  21 |   // Extract repos array from response
+  22 |   const repos = responseBody.rows[0].repos;
+  23 |
+  24 |   // Assert all repos have active === "True" (string)
+  25 |   repos.forEach(repo => {
+  26 |     expect(repo.active).toBe("True");
+  27 |   });
+  28 |
+  29 |   // Collect all repo names
+  30 |   const repoNames = repos.map(repo => repo.repo);
+  31 |
+  32 |   // Assert specific repo names exist (case sensitive)
+  33 |   expect(repoNames).toContain("_logpoint");
+  34 |   expect(repoNames).toContain("default");
+  35 |   expect(repoNames).toContain("_LogPointAlerts");
+  36 |
+  37 |   // Assert all repo addresses contain '127.0.0.1:550'
+  38 |   repos.forEach(repo => {
+  39 |     expect(repo.address).toContain("127.0.0.1:550");
+  40 |   });
+  41 | });
+  42 |
+```

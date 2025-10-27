@@ -1,0 +1,6 @@
+The response from the API is :
+{
+  success: true,
+  ids: [ '682d81704efce28aa5ba1c5f' ],
+  message: 'Alertrule(s) deleted'
+}

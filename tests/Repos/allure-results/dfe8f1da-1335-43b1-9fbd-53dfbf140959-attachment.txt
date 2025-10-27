@@ -1,0 +1,12 @@
+the response is:
+{
+  rows: [
+    {
+      active: true,
+      li: 'LogPoint-QADemoServer',
+      li_ip: '127.0.0.1',
+      repos: [Array]
+    }
+  ]
+}
+Repos:

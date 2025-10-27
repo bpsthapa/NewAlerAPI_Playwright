@@ -1,0 +1,6 @@
+The response from the API is :
+{
+  id: '682d7cc48b7f56af0d877775',
+  message: 'Alertrule updated successfully',
+  name: '/AlertRules/update_api'
+}

@@ -1,0 +1,17 @@
+Createing AlertRules
+****Testing Create Alert Rules****
+The response from the API is :
+{
+  id: '68cce6f2140fd91a34ed770e',
+  message: 'Alertrule created successfully',
+  name: 'Notification_AlertRule'
+}
+68cce6f2140fd91a34ed770e
+**********New Alert has been crated Successfuly***********
+****Testing Create HTTP Notification****
+The response from the API is :
+{
+  success: true,
+  data: [ '68cce6f2140fd91a34ed770e' ],
+  message: 'AlertRule notification created successfully'
+}

@@ -1,0 +1,7 @@
+The response from the API is :
+{
+  id: '682d81704efce28aa5ba1c5f',
+  message: 'Alertrule created successfully',
+  name: 'NewAlert_Automation_123'
+}
+682d81704efce28aa5ba1c5f

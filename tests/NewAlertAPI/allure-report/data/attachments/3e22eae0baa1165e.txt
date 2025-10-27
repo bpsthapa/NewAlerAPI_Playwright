@@ -1,0 +1,7 @@
+The response from the API is :
+{
+  id: '681d96b0383c7d985a50c84d',
+  message: 'Alertrule created successfully',
+  name: 'Alert_bpn1'
+}
+681d96b0383c7d985a50c84d

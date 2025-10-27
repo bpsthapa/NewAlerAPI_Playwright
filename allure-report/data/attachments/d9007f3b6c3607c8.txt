@@ -1,0 +1,4 @@
+Clearing test data AlertRules
+Deleting the created AlertRules and the alert rule id is: 
+68cce79a66ff35de56b11c55
+**********All the added Alert Rules has been Deleted Successfuly***********

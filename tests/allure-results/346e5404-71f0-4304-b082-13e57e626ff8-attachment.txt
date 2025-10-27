@@ -1,0 +1,6 @@
+The response from the API is :
+{
+  success: false,
+  validationErrors: { name: 'Alertrule with the same name already exists' },
+  message: 'Invalid Request'
+}

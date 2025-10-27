@@ -1,0 +1,56 @@
+[
+    {
+        "name":"a",
+        "query":"user=*",
+        "timerange_minute":1,
+        "repo":"127.0.0.1:5504/_logpoint",
+        "limit":100,
+        "search_interval_minute":1,
+        "throttling_time_range":0,
+        "condition_option":"greaterthan",
+        "aggregate":"max",
+        "jinja_template":"jinja template"
+     },
+
+     {
+        "name":"d",
+        "query":"col_type=office365 label=User label=Add",
+        "timerange_minute":10,
+        "repo":"127.0.0.1:5504/_logpoint",
+        "limit":150,
+        "search_interval_minute":10,
+        "throttling_time_range":0,
+        "condition_option":"lessthan",
+        "aggregate":"avg",
+        "jinja_template":"jinja template"
+     },
+
+     {
+        "name":"d",
+        "query":"step(destination_port,100) = 0 | chart count() by destination_port",
+        "timerange_minute":20,
+        "repo":"127.0.0.1:5504/_logpoint",
+        "limit":200,
+        "search_interval_minute":5,
+        "throttling_time_range":0,
+        "condition_option":"greaterthan",
+        "aggregate":"max",
+        "jinja_template":"jinja template"
+     },
+
+     {
+        "name":"CustomAlessrtRules_78922",
+        "query":"login device_ip = 192.168.2.1 sig_id = 10051",
+        "timerange_minute":30,
+        "repo":"127.0.0.1:5504/_logpoint",
+        "limit":250,
+        "search_interval_minute":3,
+        "throttling_time_range":0,
+        "condition_option":"lessthan",
+        "aggregate":"min",
+        "jinja_template":"jinja template"
+     }
+
+
+
+]

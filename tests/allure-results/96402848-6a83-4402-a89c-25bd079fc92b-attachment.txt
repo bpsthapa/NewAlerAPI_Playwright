@@ -1,0 +1,49 @@
+The added new alert rule id is : 682d7cc48b7f56af0d877775
+682d7cc48b7f56af0d877775
+The response from the API is :
+{
+  data: {
+    active: true,
+    alert_id: '6b5c69e2e30d49d5ed78d71659f9dc50',
+    alertrule_unique_id: '019e539541638279412509265eab36e4',
+    cloud_rule_id: null,
+    description: 'This is the description',
+    foureyes: { original_data: false },
+    hour_format: '24 Hour',
+    incident_condition: {
+      aggregate: 'max',
+      condition_option: 'greaterthan',
+      condition_value: 0,
+      risk: 'low'
+    },
+    incident_display_data: {
+      apply_jinja_template: true,
+      jinja_template: 'jinja template',
+      simple_view: false
+    },
+    incident_ownership: { assignee: 'admin', visible_to_usergroups: [] },
+    name: 'NewAlert_Automation_123',
+    notifications: [],
+    rbac_config: [ [Object] ],
+    search_params: {
+      delay_interval_minute: 0,
+      flush_on_trigger: false,
+      limit: 100,
+      query: 'user=*',
+      query_info: {},
+      repos: [Array],
+      search_interval_minute: 1,
+      throttling_enabled: false,
+      throttling_field: '0',
+      throttling_time_range: 0,
+      timerange_day: 0,
+      timerange_hour: 0,
+      timerange_minute: 1
+    },
+    taxonomy: { attack_tag_hashes: [], logsources: [], metadata: [Array] },
+    timezone: 'Europe/Amsterdam',
+    used_from: '',
+    user: 'logpoint',
+    vid: ''
+  }
+}

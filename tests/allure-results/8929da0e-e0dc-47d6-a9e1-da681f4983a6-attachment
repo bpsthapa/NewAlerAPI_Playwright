@@ -1,0 +1,107 @@
+# Test info
+
+- Name: Add AlertRule: 3
+- Location: /Users/Bipinlp/Documents/LogPoint/Allure Report/tests/NewAlertAPI/02_CreateAlert_invalidData.spec.js:15:9
+
+# Error details
+
+```
+Error: expect(received).toBeDefined()
+
+Received: undefined
+    at /Users/Bipinlp/Documents/LogPoint/Allure Report/tests/NewAlertAPI/02_CreateAlert_invalidData.spec.js:81:33
+```
+
+# Test source
+
+```ts
+   1 | const { test, expect, request } = require('@playwright/test');
+   2 | //This read data and loads the .json file as a JavaScript object.
+   3 | const data=JSON.parse(JSON.stringify(require("../../testData/BasicData.json")));
+   4 | const alertData=JSON.parse(JSON.stringify(require("../../testData/invalidAlertInputs.json")));
+   5 | //It directly loads the test data from the same JSON file again, without copying and can be used to test each data set
+   6 | const testData = require("../../testData/invalidAlertInputs.json");
+   7 |
+   8 | let Output = "The response from the API is :"
+   9 |
+  10 | const baseURL = data.baseUrl;
+  11 | const write_token = data.write_token
+  12 | const createAlert = '/AlertRules/create_api';
+  13 |
+  14 |     testData.forEach((alertdata, index) => {    
+  15 |         test(`Add AlertRule: ${index}`, async ({ request }) => {
+  16 |         
+  17 |         const response = await request.post(`${baseURL}${createAlert}`, {
+  18 |             data: {
+  19 |             "search_params": {
+  20 |                 "query": alertdata.query,
+  21 |                 "timerange_day": 0,
+  22 |                 "timerange_hour": 0,
+  23 |                 "timerange_minute": 1,
+  24 |                 "repos": [
+  25 |                 "127.0.0.1:5504/_logpoint"
+  26 |                 ],
+  27 |                 "limit": alertdata.limit,
+  28 |                 "flush_on_trigger": false,
+  29 |                 "search_interval_minute": 1,
+  30 |                 "delay_interval_minute": 0,
+  31 |                 "throttling_enabled": false,
+  32 |                 "throttling_field": "",
+  33 |                 "throttling_time_range": 0
+  34 |             },
+  35 |             "incident_condition": {
+  36 |                 "condition_option": "greaterthan",
+  37 |                 "condition_value": 0,
+  38 |                 "risk": "low",
+  39 |                 "aggregate": "max"
+  40 |             },
+  41 |             "taxonomy": {
+  42 |                 "attack_tag_hashes": [],
+  43 |                 "logsources": [],
+  44 |                 "metadata": [
+  45 |                 {
+  46 |                     "field": "string",
+  47 |                     "value": "string"
+  48 |                 }
+  49 |                 ]
+  50 |             },
+  51 |             "incident_ownership": {
+  52 |                 "assignee": "admin",
+  53 |                 "visible_to_usergroups": []
+  54 |             },
+  55 |             "incident_display_data": {
+  56 |                 "apply_jinja_template": false,
+  57 |                 "simple_view": false,
+  58 |                 "jinja_template": ""
+  59 |             },
+  60 |             "foureyes": {
+  61 |                 "original_data": false
+  62 |             },
+  63 |             "name": alertdata.name,
+  64 |             "description": "This is the description"
+  65 |             },
+  66 |             headers: {
+  67 |             'Content-Type': 'application/json',
+  68 |             'Authorization': `Bearer ${write_token}`
+  69 |             },
+  70 |             // Disable SSL certificate verification
+  71 |             ignoreHTTPSErrors: true
+  72 |         });
+  73 |
+  74 |         //expect(response.ok()).toBeTruthy(); // Check if status is 2xx
+  75 |         const responseBody = await response.json();
+  76 |         console.log(Output);
+  77 |         console.log(responseBody);
+  78 |
+  79 |         //assert individual fields
+  80 |         expect(responseBody.success).toBe(false);
+> 81 |         expect(responseBody.id).toBeDefined();
+     |                                 ^ Error: expect(received).toBeDefined()
+  82 |         expect(responseBody.message).toBe("Invalid Request");
+  83 |         });
+  84 |     });
+  85 |
+  86 |
+  87 |
+  88 |     //npx playwright test ./02_CreateAlert_invalidData.spec.js --reporter=line,allure-playwright
+```

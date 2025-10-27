@@ -1,0 +1,70 @@
+the response is:
+{
+  rows: [
+    {
+      active: true,
+      cloud_rule_id: null,
+      description: 'This is the description of the alert rules which has been updated one UI alert updated',
+      id: '682d7d018b7f56af0d877777',
+      name: '/AlertRules/update_api',
+      user: 'logpoint'
+    },
+    {
+      active: true,
+      cloud_rule_id: null,
+      description: 'This is the description',
+      id: '682b6137db223626498ed318',
+      name: 'ALertNoti',
+      user: 'logpoint'
+    },
+    {
+      active: true,
+      cloud_rule_id: null,
+      description: 'This is the description',
+      id: '68270b2edb223626498ed316',
+      name: 'New123',
+      user: 'logpoint'
+    },
+    {
+      active: true,
+      cloud_rule_id: null,
+      description: 'This is the description',
+      id: '6825c9f4db223626498ed314',
+      name: 'Bipin',
+      user: 'logpoint'
+    },
+    {
+      active: true,
+      cloud_rule_id: null,
+      description: 'This is the description',
+      id: '6825a303db223626498ed310',
+      name: 'CustomAlertRules_7892_admin',
+      user: 'logpoint'
+    },
+    {
+      active: true,
+      cloud_rule_id: null,
+      description: 'This is the description',
+      id: '6825a303db223626498ed30e',
+      name: 'AlertFromAzureAD2_admin',
+      user: 'logpoint'
+    },
+    {
+      active: true,
+      cloud_rule_id: null,
+      description: 'This is the description',
+      id: '6825a3028b7f56af0d87776c',
+      name: 'User Added to ADBpn1',
+      user: 'logpoint'
+    },
+    {
+      active: true,
+      cloud_rule_id: null,
+      description: 'This is the description',
+      id: '6825a301e043e157f2cb4d93',
+      name: 'Alert_bpn1',
+      user: 'logpoint'
+    }
+  ],
+  total: 8
+}

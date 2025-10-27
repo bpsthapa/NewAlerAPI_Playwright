@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"fa9ea6d2bdb66dad940f1700d4bcddbc","name":"NewAlertAPI/CRUD_AlertRules_Final.spec.js","statistic":{"failed":0,"broken":0,"skipped":0,"passed":7,"unknown":0,"total":7}},{"uid":"f21bd695e7e6285b4ed809b2cf712aef","name":"Repos/getAllRepos.spec.js","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}

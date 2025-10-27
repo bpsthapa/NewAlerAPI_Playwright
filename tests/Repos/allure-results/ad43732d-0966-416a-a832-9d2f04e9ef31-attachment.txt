@@ -1,0 +1,126 @@
+🔍 Full JSON Response:
+ {
+  "rows": [
+    {
+      "active": true,
+      "li": "LogPoint-QADemoServer",
+      "li_ip": "127.0.0.1",
+      "repos": [
+        {
+          "active": "True",
+          "address": "127.0.0.1:5504/SiteA",
+          "ha": "",
+          "repo": "SiteA"
+        },
+        {
+          "active": "True",
+          "address": "127.0.0.1:5504/UEBA_730",
+          "ha": "",
+          "repo": "UEBA_730"
+        },
+        {
+          "active": "True",
+          "address": "127.0.0.1:5504/Dumy",
+          "ha": "",
+          "repo": "Dumy"
+        },
+        {
+          "active": "True",
+          "address": "127.0.0.1:5504/Proxy_WAF",
+          "ha": "",
+          "repo": "Proxy_WAF"
+        },
+        {
+          "active": "True",
+          "address": "127.0.0.1:5504/_LogPointAlerts",
+          "ha": "",
+          "repo": "_LogPointAlerts"
+        },
+        {
+          "active": "True",
+          "address": "127.0.0.1:5504/SiteA-subsite",
+          "ha": "",
+          "repo": "SiteA-subsite"
+        },
+        {
+          "active": "True",
+          "address": "127.0.0.1:5504/_logpoint",
+          "ha": "",
+          "repo": "_logpoint"
+        },
+        {
+          "active": "True",
+          "address": "127.0.0.1:5504/cloud",
+          "ha": "",
+          "repo": "cloud"
+        },
+        {
+          "active": "True",
+          "address": "127.0.0.1:5504/firewalls",
+          "ha": "",
+          "repo": "firewalls"
+        },
+        {
+          "active": "True",
+          "address": "127.0.0.1:5504/apache",
+          "ha": "",
+          "repo": "apache"
+        },
+        {
+          "active": "True",
+          "address": "127.0.0.1:5504/security",
+          "ha": "",
+          "repo": "security"
+        },
+        {
+          "active": "True",
+          "address": "127.0.0.1:5504/uebaoutput",
+          "ha": "",
+          "repo": "uebaoutput"
+        },
+        {
+          "active": "True",
+          "address": "127.0.0.1:5504/benchmark",
+          "ha": "",
+          "repo": "benchmark"
+        },
+        {
+          "active": "True",
+          "address": "127.0.0.1:5504/default",
+          "ha": "",
+          "repo": "default"
+        },
+        {
+          "active": "True",
+          "address": "127.0.0.1:5504/agileSI",
+          "ha": "",
+          "repo": "agileSI"
+        },
+        {
+          "active": "True",
+          "address": "127.0.0.1:5504/ueba_op",
+          "ha": "",
+          "repo": "ueba_op"
+        },
+        {
+          "active": "True",
+          "address": "127.0.0.1:5504/ueba",
+          "ha": "",
+          "repo": "ueba"
+        },
+        {
+          "active": "True",
+          "address": "127.0.0.1:5504/windows",
+          "ha": "",
+          "repo": "windows"
+        },
+        {
+          "active": "True",
+          "address": "127.0.0.1:5504/cisco",
+          "ha": "",
+          "repo": "cisco"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","210","Add AlertRule: 3","","Fri May 09 11:31:24 NPT 2025","passed","Fri May 09 11:31:24 NPT 2025","","test.spec.js","",""
+"","260","Add AlertRule: 2","","Fri May 09 11:31:24 NPT 2025","passed","Fri May 09 11:31:24 NPT 2025","","test.spec.js","",""
+"","276","Add AlertRule: 1","","Fri May 09 11:31:24 NPT 2025","passed","Fri May 09 11:31:24 NPT 2025","","test.spec.js","",""
+"","824","Add AlertRule: 0","","Fri May 09 11:31:23 NPT 2025","passed","Fri May 09 11:31:24 NPT 2025","","test.spec.js","",""

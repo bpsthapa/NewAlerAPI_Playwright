@@ -1,0 +1,15 @@
+****Testing View Alert Rules Lists****
+the response is:
+{
+  rows: [
+    {
+      active: true,
+      cloud_rule_id: null,
+      description: 'This is the description of the alert rules which has been updated one UI alert updated',
+      id: '68a43c313c9de192c30a343b',
+      name: 'Updated_AlertRule_Bipin',
+      user: 'admin'
+    }
+  ],
+  total: 1
+}

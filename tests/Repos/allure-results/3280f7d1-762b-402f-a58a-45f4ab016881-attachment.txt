@@ -1,0 +1,6 @@
+the response is:
+{
+  error: 'Request out of the scope of the token',
+  status_code: 403,
+  success: false
+}
